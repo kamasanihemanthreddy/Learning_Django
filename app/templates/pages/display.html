@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+
+	
+
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+
+
+	<link rel="stylesheet" type="text/css" href="{% static 'util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+
+</head>
+<body>
+	<div class="limiter">
+		
+	<div class="container">
+		<table class="table table-bordered table-hover">
+			<thead>
+				<th>Order_Num</th>
+				<th>Profit/Loss %</th>
+				<th>Transfred Amount</th>
+				<th>Total Market Cost</th>
+			</thead>
+	{% for data in final_result %}
+	<tr>
+		
+		<td>{{data.ordernum}}</td>
+		<td>{{data.profit_loss_per}}</td>
+		<td>{{data.Transferred_amount}}</td>
+		<td>{{data.Total_Mc}}</td>
+
+	</tr>
+		{% endfor%}
+	
+</table>
+	</div>
+	
+</div>
+	
+
+</body>
+</html>

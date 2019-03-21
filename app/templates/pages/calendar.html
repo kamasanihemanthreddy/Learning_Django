@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<title></title>
+<head>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+
+
+	<link rel="stylesheet" type="text/css" href="{% static 'util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+
+</head>
+<body>
+	<div class="container">
+			 <table class="table table-hover table-striped table-bordered">
+                  {% if events %}
+                  <thead>
+                  	<th>Date</th>
+                  	<th>Summary</th>
+
+                  </thead>
+                  {% for event in events %}
+                  <tr>
+                    <td>{{ event.start }}</td>
+                    <td>{{ event.summary }}</td>
+                                      </tr>
+                  {%endfor%}
+                </table>
+                {%else%}
+                <p class="alert alert-warning">No events to display </p>
+                {%endif%}
+	</div>
+</body>
